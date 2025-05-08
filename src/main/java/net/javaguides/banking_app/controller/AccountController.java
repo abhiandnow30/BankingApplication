@@ -4,15 +4,14 @@ import net.javaguides.banking_app.dto.AccountDto;
 import net.javaguides.banking_app.service.AccountService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
-public class AccountCountroller {
+@RestController
+@RequestMapping("/api/accounts")
+public class AccountController {
     private AccountService accountService;
 
-    public AccountCountroller(AccountService accountService) {
+    public AccountController(AccountService accountService) {
         this.accountService = accountService;
     }
     //Add Account REST API
